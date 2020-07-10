@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMoves : MonoBehaviour
+public class PlayerMoves : MonoBehaviour
 {
-
-    public GameObject player;
+    
     public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
+        
     }
 
     // Update is called once per frame
