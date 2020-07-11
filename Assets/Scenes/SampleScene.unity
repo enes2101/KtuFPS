@@ -132,10 +132,10 @@ GameObject:
   - component: {fileID: 324428779}
   - component: {fileID: 324428778}
   - component: {fileID: 324428777}
-  - component: {fileID: 324428775}
   - component: {fileID: 324428780}
   - component: {fileID: 324428781}
   - component: {fileID: 324428776}
+  - component: {fileID: 324428775}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -150,12 +150,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324428774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27caa03f6117f8648a2d52d9d994b1c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b1a3f191ebdcb94f8b1fa7215a8e824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6.08
+  xRotation: 1
+  yRotation: 1
+  rotationSpeed: 50
 --- !u!65 &324428776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -243,11 +245,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089d8e7a2cc265748a4bcae4f609a519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.75
+  speed: 27.81
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
-  jumpForce: 7.3
+  jumpForce: 8.13
+  jumpHeight: 0
+  isGrounded: 0
+  myTrans: {fileID: 0}
+  groundTag: {fileID: 0}
+  PlayerJump: 0
 --- !u!54 &324428781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -452,8 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1a3f191ebdcb94f8b1fa7215a8e824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 0.5
-  verticalSpeed: 0.5
+  xRotation: 0
+  yRotation: 0
+  rotationSpeed: 0
 --- !u!1 &1470054681
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +476,7 @@ GameObject:
   - component: {fileID: 1470054682}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 1470054681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.7063, y: 0.35136, z: 7.3948755}
+  m_LocalScale: {x: -14.513207, y: -0.66171324, z: -21.925858}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
