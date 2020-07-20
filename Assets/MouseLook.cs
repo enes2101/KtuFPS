@@ -5,8 +5,8 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 
-    public float xRotation;
-    public float yRotation;
+    float xRotation;
+    float yRotation;
     public float rotationSpeed;
     public GameObject player;
 

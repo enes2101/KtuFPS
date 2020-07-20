@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     public float speed;
     private Rigidbody rb;
     public float jumpForce;
-    public bool isGrounded = true;
+    bool isGrounded = true;
     
     void Start()
     {
