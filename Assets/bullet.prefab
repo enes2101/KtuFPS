@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 0
   bulletSize: 0
-  bulletDamage: 0
+  bulletDamage: 50
 --- !u!114 &-985222194086213892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b73c94ff6a80224cb6890a6095d1ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 15
 --- !u!54 &-2908414438515238896
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -16,7 +16,8 @@ public class WeaponController : MonoBehaviour
 
     public void BulletFire(Vector3 dir,Quaternion rotation)
     {
-        GameObject bullet=Instantiate(wData.bulletPrefab,wData.barrel.transform.position,rotation);
+        BulletController bullet=Instantiate(wData.bulletPrefab,wData.barrel.transform.position,rotation).GetComponent<BulletController>();
+        bullet.Init();
         bullet.transform.GetComponent<BulletController>().BulletThrowForce(bullet.transform.position,wData.shootingRange,dir);
     }
 }

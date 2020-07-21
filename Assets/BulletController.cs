@@ -5,7 +5,16 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     float distance;
-    
+    BulletData bData;
+    public Rigidbody rb;
+    public int speed;
+
+    public void Init()
+    {
+        bData = this.gameObject.GetComponent<BulletData>();
+        rb = this.gameObject.GetComponent<Rigidbody>();
+    }
+
     public void BulletThrowForce(Vector3 firstPos,float range,Vector3 dir)
     {
         StartCoroutine(CheckDistance(firstPos,range,dir));
@@ -17,8 +26,8 @@ public class BulletController : MonoBehaviour
         while (distance<range)
         {
             distance = Vector3.Distance(firstPos, transform.position);
-            transform.position += dir;
-            yield return new WaitForSeconds(0.1f);
+            rb.MovePosition(transform.position + dir*Time.deltaTime*speed);
+            yield return new WaitForSeconds(0.01f);
         }
 
         Destroy(gameObject);
@@ -28,8 +37,14 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
-        Debug.Log("hit the object");
+
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyController>().TakeDamage(50);
+            Destroy(gameObject);
+            Debug.Log("hit the object");
+        }
+        
     }
 
 }
