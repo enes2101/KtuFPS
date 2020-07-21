@@ -15,9 +15,15 @@ public class EnemySpawn : MonoBehaviour
         StartCoroutine(EnemyDrop());
     }
 
+    public IEnumerator CreateEnemyCor(Vector3 pos)
+    {
+        yield return new WaitForSeconds(2);
+        Instantiate(enemyPrefab,pos,Quaternion.identity);
+    }
+
     public void CreateEnemy(Vector3 pos)
     {
-        Instantiate(enemyPrefab,pos,Quaternion.identity);
+        StartCoroutine(CreateEnemyCor(pos));
     }
 
     IEnumerator EnemyDrop()
